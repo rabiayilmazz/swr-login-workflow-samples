@@ -5,7 +5,7 @@ on:
        master
 env:
   REGION_ID: 'ap-southeast-3'   # example: cn-north-4
-  IMAGE_URL: 'swr.ap-southeast-3.myhuaweicloud.com/hbatur/nginx-hello2:'     # 镜像地址
+  IMAGE_URL: 'swr.ap-southeast-3.myhuaweicloud.com/hbatur/nginx-hello2:latest'     # 镜像地址
 jobs:
   swr-pull:
     runs-on: ubuntu-latest
