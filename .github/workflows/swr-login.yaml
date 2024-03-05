@@ -15,8 +15,8 @@ jobs:
       - name: Log in to Huawei Cloud SWR
         uses: huaweicloud/swr-login@v2.1.0
         with:
-          access-key-id: 'CQSXQ2LMFGI5U1ZKCOC1'
-          access-key-secret: 'qKJIj9ehdsZiWLNRFnwFDH2CvMhIP4zq0dbLODAl'
+          access-key-id: 'ak'
+          access-key-secret: 'sk'
           region: ${{ env.REGION_ID }}  
 
       - name: Pull Image from Huawei Cloud SWR
