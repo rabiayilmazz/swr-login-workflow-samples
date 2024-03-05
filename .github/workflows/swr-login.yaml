@@ -1,0 +1,25 @@
+name: Pull Image from SWR Demo
+on:
+  push:
+    branches:
+       master
+env:
+  REGION_ID: 'ap-southeast-3'   # example: cn-north-4
+  IMAGE_URL: 'swr.ap-southeast-3.myhuaweicloud.com/hbatur/nginx-hello2:'     # 镜像地址
+jobs:
+  swr-pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Log in to Huawei Cloud SWR
+        uses: huaweicloud/swr-login@v2.1.0
+        with:
+          access-key-id: 'CQSXQ2LMFGI5U1ZKCOC1'
+          access-key-secret: 'qKJIj9ehdsZiWLNRFnwFDH2CvMhIP4zq0dbLODAl'
+          region: ${{ env.REGION_ID }}  
+
+      - name: Pull Image from Huawei Cloud SWR
+        id: pull-image
+        run: |
+          docker pull ${{ env.IMAGE_URL }}
